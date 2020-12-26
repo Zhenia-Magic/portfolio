@@ -13,3 +13,7 @@ In this repository, you can find my technical portfolio of projects.
 5. Regression_and_Causality.Rmd - R code to perform some operations on regression analysis and its relation to causality.
 
 6. Causal_Inference.Rmd - Matching and Sensitivity Analysis Procedures in order to measure the causal impact of some factors.
+
+7. ML Results - Results of the K-means clustering and Naive Bayes Classification.
+
+8. R_data_analysis.ipynb - R data analysis on the government dataset.
