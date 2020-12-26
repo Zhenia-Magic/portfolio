@@ -2,9 +2,7 @@
 title: "CS112 Assignment 2, Fall 2020"
 author: "Evgeniia Barabash"
 date: "09/27/2020"
-output:
-  pdf_document: default
-  word_document: default
+output: rmarkdown::github_document
 ---
 
 ```{r setup, include=FALSE}
@@ -22,14 +20,6 @@ library(Metrics)
 # we need to set the seed of R's random number generator, in order to produce comparable results 
 set.seed(32)
 ```
-
-**Note**: *This is an RMarkdown document. Did you know you can open this document in RStudio, edit it by adding your answers and code, and then knit it to a pdf? Then you can submit both the .rmd file (the edited file) and the pdf file as a zip file on Forum. This method is actually preferred. To learn more about RMarkdown, watch the videos from session 1 and session 2 of the CS112B optional class. [This](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is also a cheat sheet for using Rmarkdown. If you have questions about RMarkdown, please post them on Perusall.*
-
-**Note**: *If you are not comfortable with RMarkdown, you can use any text editor (google doc or word) and type your answers and then save everything as a pdf and submit both the pdf file AND the link to your code (on github or jupyter) on Forum.*
-
-**Note**: *Try knitting this document in your RStudio. You should be able to get a pdf file. At any step, you can try knitting the document and recreate a pdf. If you get error, you might have incomplete code.*
-
-**Note**: *If you are submitting your assignment as an RMarkdown file, make sure you add your name to the top of this document.*
 
 ## QUESTION 1
 
@@ -701,64 +691,3 @@ How do data scientists really use cross-validation? How is the approach in this 
 We can see that the misclassification rate of the test sample is better done by the simple method as the train test misclassification rate is 0.104, while the real test misclassification rate is 0.102, so the difference is minimal. However, for the LOOCV approach (and I think mainly because we used a little sample) the train misclassification rate is 0.0856, while the test misclassification rate is 0.1069.
 
 I think scientists mostly use k-fold CV because it can give the opportunity to not overfit, while do less computations than LOOCV and create less variance as the models are mostly not highly correlated as the input samples are not nearly the same for every model as in LOOCV. Also, I think scientists will bring all the data to do cross-validation, even though it can take days of calculations as the accuracy is the highest priority.
-
-
-## Extra Credit: Least Absolute Deviation Estimator
-
-#### STEP 1
-
-Figure out how to use rgenoud to run a regression that maximizes the least absolute deviation instead of the traditional **sum of the squared residuals**. Show that this works by running that regression on the `lalonde` data set with outcome being `re78` and independent variables being `age`, `education`, `hisp`, `re74`, `re75`, and `treat`. 
-
-```{r}
-# YOUR CODE HERE
-
-```
-
-
-#### STEP 2
-
-How different is this coef on treat from the coef on treat that you get from the corresponding traditional least squares regression?
-
-
-
-
-
-#### STEP 3
-
-Now figure out how to do the same by using rgenoud to run the logistic regression (modeling treatment status as a function of `age`, `education`, `hisp`, `re74` and `re75`).
-
-```{r}
-# YOUR CODE HERE
-
-```
-
-
-## END OF Assignment!!!
-
-## Final Steps
-
-### Add Markdown Text to .Rmd
-
-Before finalizing your project you'll want be sure there are **comments in your code chunks** and **text outside of your code chunks** to explain what you're doing in each code chunk. These explanations are incredibly helpful for someone who doesn't code or someone unfamiliar to your project.
-You have two options for submission:
-
-1. You can complete this .rmd file, knit it to pdf and submit both the .rmd file and the .pdf file on Forum as one .zip file.
-2. You can submit your assignment as a separate pdf using your favorite text editor and submit the pdf file along with a lint to your github code. Note that links to Google Docs are not accepted.
-
-
-### Knitting your R Markdown Document
-
-Last but not least, you'll want to **Knit your .Rmd document into an HTML document**. If you get an error, take a look at what the error says and edit your .Rmd document. Then, try to Knit again! Troubleshooting these error messages will teach you a lot about coding in R. If you get any error that doesn't make sense to you, post it on Perusall.
-
-### A Few Final Checks
-
-If you are submitting an .rmd file, a complete project should have:
-
-- Completed code chunks throughout the .Rmd document (your RMarkdown document should Knit without any error)
-- Comments in your code chunks
-- Answered all questions throughout this exercise.
-
-If you are NOT submitting an .rmd file, a complete project should have:
-
-- A pdf that includes all the answers and their questions.
-- A link to Github (gist or repository) that contais all the code used to answer the questions. Each part of you code should say which question it's referring to.
