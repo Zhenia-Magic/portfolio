@@ -28,21 +28,6 @@ library(gridExtra)
 set.seed(928)
 ```
 
-# A few important notes
-
-**Option 1 for submitting your assignment**: *This method is actually preferred. This is an RMarkdown document. Did you know you can open this document in RStudio, edit it by adding your answers and code, and then knit it to a pdf? To submit your answers to this assignment, simply knit this file as a pdf and submit it as a pdf on Forum. All of your code must be included in the resulting pdf file, i.e., don't set echo = FALSE in any of your code chunks. To learn more about RMarkdown, watch the videos from session 1 and session 2 of the CS112B optional class. [This](https://rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) is also a cheat sheet for using Rmarkdown. If you have questions about RMarkdown, please post them on Perusall. Try knitting this document in your RStudio. You should be able to get a pdf file. At any step, you can try knitting the document and recreate a pdf. If you get error, you might have incomplete code.*
-
-**Option 2 for submitting your assignment**: *If you are not comfortable with RMarkdown, you can also choose the Google Doc version of this assignment, make a copy of it and edit the Google doc (include your code, figures, results, and explanations) and at the end download your Google Doc as a pdf and submit the pdf file.*
-
-**Note**: *Either way (if you use Rmd and knit as pdf OR if you use Google Doc and download as pdf) you should make sure you put your name on top of the document.*
-
-**Note**: *The first time you run this document you may get error that some packages don't exist. If you don't have the packages listed on top of this document, install them first and you won't get those errors.*
-
-**Note**: *If you work with others or get help from others on the assignment, please provide the names of your partners at the top of this document. Working together is fine, but all must do and understand their own work and have to mention the collaboration on top of this document.*
-
-**Note**: *Don't change seed in the document. The function `set.seed()` has already been set at the beginning of this document to 928. Changing the see again to a different number will make your results not replicable.*
-
-
 ## QUESTION 1: Data Generating Example
 
 The following code, creates a toy dataset with a treatment variable, $D$, an outcome variable, $Y$, and other variables $V_1$ to $V_4$. 
@@ -209,10 +194,6 @@ love.plot(bal.tab(hasgirls ~ dems + repubs + christian + age + srvlng + demvote,
 
 Then, do genetic matching. Use the same variables as in the regression above. Make sure to set `estimand = "ATT"`. What's your treatment effect?
 
-**Note**: *For replicability purposes, we need to choose a see for the `GenMatch()` function. However, setting seed for `GenMatch()` is different. The usual practice of typing `set.seed(some number)` before the GenMatch line doesn't ensure stochastic stability. To set seeds for `GenMatch`, you have to run `GenMatch()` including instructions for genoud within `GenMatch()`, e.g.: `GenMatch(Tr, X, unif.seed = 123, int.seed = 92485...)`. You can find info on these `.seed elements` in the documentation for `genoud()`. The special .seed elements should only be present in the `GenMatch()` line, not elsewhere (because nothing besides `GenMatch()` runs genoud.*
-
-**Note**: *When you use the `GenMatch()` function, wrap everything inside the following function `invisible(capture.output())`. This will reduce the unnecessary output produced from the GenMatch() function. For instance, you can say: `invisible(capture.output(genout_daughters <- GenMatch(...)))`*
-
 ```{r}
 #create a table of covariates
 X = cbind(daughters$dems,daughters$repubs,daughters$christian,daughters$age,daughters$srvlng,daughters$demvote)
@@ -249,14 +230,6 @@ The treatment effect is extremely different from the treatment coefficient from 
 #### STEP 5
 
 Change the parameters in your genetic matching algorithm to improve the balance of the covariates. Consider rerunning with M = 2 or 3 or more. Consider increasing other parameters in the `GenMatch()` function such as the number of generations and population size, caliper, etc. Try 10 different ways but don't report the results of the genetic matching weights or the balance in this document. Only report the treatment effect of your top 3 matches. For instance, run the `Match()` function three times for your top 3 genout objects. Make sure the summary reports the treatment effect estimate, the standard error, and the confidence interval. Do you see a large variation in your treatment effect between your top 3 models?
-
-**Note**: *For replicability purposes, we need to choose a see for the `GenMatch()` function. However, setting seed for `GenMatch()` is different. The usual practice of typing `set.seed(123)` before the GenMatch line doesn't ensure stochastic stability. To set seeds for `GenMatch`, you have to run `GenMatch()` including instructions for genoud within `GenMatch()`, e.g.: `GenMatch(Tr, X, unif.seed = 123, int.seed = 92485...)`. You can find info on these `.seed elements` in the documentation for `genoud()`. The special .seed elements should only be present in the `GenMatch()` line, not elsewhere (because nothing besides `GenMatch()` runs genoud.*
-
-**Note**: *When you use the `GenMatch()` function, wrap everything inside the following function `invisible(capture.output())`. This will reduce the unnecessary output produced with the GenMatch() function. For instance, you can say: `invisible(capture.output(genout_daughters <- GenMatch(...)))`*
-
-**Note**: *In the matching assignment, you may find that the Genetic Matching step takes a while, e.g., hours. If you have to reduce pop.size to e.g., 10 or 16 to ensure it stops after only an hour or two, that's fine. Running your computer for an hour or two is a good thing. Running it for a full day or more is unnecessary overkill (and if this is your situation, change hyperparameters like pop.size to reduce run-time). For example, we suggest you modify the pop.size (e.g., you can set it to 5!), max.generations (set it to 2!), and wait.generations (set it to 1!) and that should expedite things.*
-
-**Note**: *Can you set a caliper for one confounding variable, and not others (e.g., only set a caliper for "age")? No and yes. No, strictly speaking you can't. But yes, practically speaking you can, if you set other calipers (for the other confounders) that are so wide as to not induce any constraints. E.g., in GenMatch, and Match, you could set `caliper = c(1e16, 1e16, 0.5, 1e16)` and this would induce a certain meaningful caliper for the third confounder in X, without constraining the other confounders (because 1e16 implies a caliper that is so enormously wide that it does not, in practical terms, serve as a caliper at all).*
 
 ```{r}
 
@@ -296,9 +269,6 @@ There is a significant variation in treatment effect.
 #### STEP 6
 
 Repeat everything you've done for Steps 1-2, including the regression, genetic algorithm, code and estimating the treatment effect EXCEPT this time change the definition of treatment to cover 2 girls or more, and change the definition of control to cover 2 boys or more. Exclude all observations that don't meet these requirements. Be sure to explain (in a sentence or two) what you're doing with your new treatment and control definitions. Do your new definitions change anything?
-
-**Note**: *Definition of the new treatment variable is as follows: Individuals in the treatment group should be having 2 or more girls and no boys, and individuals in the control group should be having 2 or more boys and no girls. What I had in mind was that such a situation increased the "dosage" of treatment vs. the "dosage" of control (and Rosenbaum alluded to this kind of observational design logic in one of the recently assigned articles). Note that you can't have the same units in the treatment group AND the control group -- we should all know by now that such a situation would be wrong.*
-
 
 ```{r}
 daughters <- daughters[((daughters$ngirls >= 2) & (daughters$nboys == 0)) | ((daughters$ngirls == 0) & (daughters$nboys >= 2)),]
@@ -445,22 +415,3 @@ Then, write a paragraph explaining what you found. Your paragraph should include
 
 The critical gamma is 2. When there is 2 times more (or more than 2 times more) chance for some unit to be treated than the other unit, the p-value of the treatment effect estimate becomes bigger and bigger which means the treatment effect is not reliable. As we can see, the data we use is not very stable to increase in gamma. Therefore, it is sensitive to hidden bias (unobserved confounders).
 
-
-# End of Assignment
-
-## Final Steps
-
-Before finalizing your project you'll want be sure there are **comments in your code chunks** and **text outside of your code chunks** to explain what you're doing in each code chunk. These explanations are incredibly helpful for someone who doesn't code or someone unfamiliar to your project.
-
-You have two options for submission:
-
-1. You can complete this .rmd file, knit it to pdf and submit the resulting .pdf file on Forum.
-2. You can complete the Google Doc version of this assignment, include your code, graphs, results, and your explanations wherever necessary and download the Google Doc as a pdf file and submit the pdf file on Forum. If you choose this method, you need to make sure you will provide a link to an .R script file where you code can be found (you can host your code on Github or Google Drive). Note that links to Google Docs are not accepted as your final submission.
-
-
-### Knitting your R Markdown Document
-
-Last but not least, you'll want to **Knit your .Rmd document into a pdf document**. If you get an error, take a look at what the error says and edit your .Rmd document. Then, try to Knit again! Troubleshooting these error messages will teach you a lot about coding in R. If you get any error that doesn't make sense to you, post it on Perusall.
-
-
-Good Luck! The CS112 Teaching Team
