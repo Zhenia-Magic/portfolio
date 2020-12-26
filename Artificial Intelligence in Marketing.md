@@ -97,7 +97,7 @@ Thus, using simple components budget optimization mechanism is an innovative and
 
 ## AI integration into medical clinic's marketing
 
-As we have looked at some of how AI can be introduced into marketing, we can discuss more specific applications of AI within the orthopedic clinic - my business.
+As we have looked at some of how AI can be introduced into marketing, we can discuss more specific applications of AI within the orthopedic clinic.
 
 The clinic is located in Moscow, so the primary audience is Russians. During the development of the clinic, various AI tools were introduced to optimize marketing. We will now consider how some of them work. 
 
