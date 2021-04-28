@@ -19,3 +19,5 @@ In this repository, you can find my technical portfolio of projects.
 8. R_data_analysis.ipynb - R data analysis on the government dataset.
 
 9. My_printf.c - custom implementation of printf function in C.
+
+10. https://zhenia-magic.github.io/museum_of_candy/ Website built using Bootstrap, JS, HTML, and CSS.
