@@ -24,4 +24,4 @@ In this repository, you can find my technical portfolio of projects.
 
 11. https://zhenia-magic.github.io/random_color_generator/ Random Color Generator Website
 
-12. https://zhenia-magic.github.io/score_keeper/ Score Keeper Website
+12. https://zhenia-magic.github.io/score_keeper/index.html Score Keeper Website
