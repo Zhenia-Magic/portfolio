@@ -23,3 +23,5 @@ In this repository, you can find my technical portfolio of projects.
 10. https://zhenia-magic.github.io/museum_of_candy/ Website built using Bootstrap, JS, HTML, and CSS.
 
 11. https://zhenia-magic.github.io/random_color_generator/ Random Color Generator Website
+
+12. https://zhenia-magic.github.io/score_keeper/ Score Keeper Website
