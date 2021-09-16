@@ -286,7 +286,7 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    gettext.bindtextdomain("blackjack", "./locale/")
+    gettext.bindtextdomain("blackjack", "locale/")
     gettext.textdomain("blackjack")
     _ = gettext.gettext
 
