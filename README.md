@@ -32,4 +32,6 @@ In this repository, you can find my technical portfolio of projects.
 
 15. https://github.com/Zhenia-Magic/Python-Checkers - checkers written in Python with intellectual bot
 
-16. Correlation and Regression Report - report for the data analysis of the house prices and house features
+16. Correlation and Regression Report.ipynb - report for the data analysis of the house prices and house features
+
+17. houses.ipynb - data analysis of houses data
