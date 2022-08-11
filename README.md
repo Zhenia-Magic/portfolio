@@ -31,3 +31,5 @@ In this repository, you can find my technical portfolio of projects.
 14. https://zhenia-magic.github.io/score_keeper/ Score Keeper Website
 
 15. https://github.com/Zhenia-Magic/Python-Checkers - checkers written in Python with intellectual bot
+
+16. Correlation and Regression Report - report for the data analysis of the house prices and house features
