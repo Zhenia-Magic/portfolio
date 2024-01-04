@@ -1,37 +1,32 @@
-# Portfolio
+# Portfolio Overview
 
-In this repository, you can find my technical portfolio of projects. 
+Welcome to my portfolio! This repository is a showcase of my expertise across various domains of software development, ranging from system programming to web and app development. Below is an overview of each subfolder with highlights of standout projects.
 
-1. Melanoma_Neural_Network.ipynb - Convolutional Neural Network to detect the melanoma based on the photo of skin of the person.
+## C Projects
 
-2. Plagiarism_Detector.ipynb - Rolling Hashing vs. Usual Hashing to detect plagiarism + plagiarism percentage counter.
+Contains projects demonstrating proficiency in system-level programming in C. Key highlights include robust implementations of Unix-like utilities.
 
-3. Prefix_Tree_with_Autocomplete.ipyn - Trie implementation with preorder traversal to extract the vocabulary, autocompletion, and the ability to extract k most common words in the corpus.
+## R Projects
 
-4. Artificial Intelligence in Marketing.md - Scientific article about the impact of AI on the modern marketing practices.
+Focuses on statistical analysis and data science using R. Includes in-depth explorations of regression analysis, causality, and data analysis on real-world datasets.
 
-5. Regression_and_Causality.Rmd - R code to perform some operations on regression analysis and its relation to causality.
+## Swift Projects
 
-6. Causal_Inference.Rmd - Matching and Sensitivity Analysis Procedures in order to measure the causal impact of some factors.
+Showcases iOS app development skills with Swift.
 
-7. ML Results - Results of the K-means clustering and Naive Bayes Classification.
+## DevOps Projects
 
-8. R_data_analysis.ipynb - R data analysis on the government dataset.
+Demonstrates my skills in DevOps, emphasizing on automation and efficient software deployment.
 
-9. My_printf.c - custom implementation of printf function in C.
+## Python Projects
 
-10. BlackJack Game - a little blackjack game with the support of Chinese and Russian languages
+Highlights capabilities in Python, covering areas such as data science, machine learning, and backend developement.
 
-11. tkinter_pdf_text_extractor - pdf text extractor written with tkinter
+## Key Projects
 
-12. https://zhenia-magic.github.io/museum_of_candy/ Website built using Bootstrap, JS, HTML, and CSS.
+The following are some of the standout projects from across the portfolio:
 
-13. https://zhenia-magic.github.io/random_color_generator/ Random Color Generator Website
-
-14. https://zhenia-magic.github.io/score_keeper/ Score Keeper Website
-
-15. https://github.com/Zhenia-Magic/Python-Checkers - checkers written in Python with intellectual bot
-
-16. Correlation and Regression Report.ipynb - report for the data analysis of the house prices and house features
-
-17. houses.ipynb - data analysis of houses data
+- TheBiohack (Python, Vue.js, Docker): A multidisciplinary project that combines various technologies, demonstrating my ability to integrate different tools and frameworks to create innovative solutions.
+- Fake Video Studio (DevOps): Simulates a video processing studio, showcasing my expertise in setting up and managing DevOps pipelines.
+- Prefix Tree with Autocomplete (Python): A robust implementation of a prefix tree for autocomplete, demonstrating my ability to create efficient data structures and algorithms.
+- Plagiarism Detector (Python): A plagiarism detection tool that uses Rolling Hashing to detect plagiarism, demonstrating my ability to apply algorithms to real-world problems.
